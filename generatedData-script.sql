@@ -1,321 +1,272 @@
-DROP TABLE IF EXISTS `students`;
-
-CREATE TABLE `students` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
-  `student_phone` varchar(100) default NULL,
-  `student_email` varchar(255) default NULL,
-  `adress_street_name` varchar(255) default NULL,
-  `adress_zip_code` varchar(10) default NULL,
-  `adress_city` varchar(50) default NULL,
-  `skill_level` TEXT default NULL,
-  `person_number` mediumint default NULL,
-  `id` mediumint default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
-INSERT INTO `students` (`name`,`student_phone`,`student_email`,`adress_street_name`,`adress_zip_code`,`adress_city`,`skill_level`,`person_number`,`id`)
+INSERT INTO student (name,adress_street_name,adress_zip_code,adress_city,skill_level,person_number)
 VALUES
-  ("Drake Gibbs","1-584-591-6045","cursus@google.edu","P.O. Box 461, 6581 Urna. St.","416225","Västra Götalands län","beginner",19781031,729),
-  ("Conan Harmon","1-701-616-3362","non.justo.proin@icloud.couk","P.O. Box 490, 3188 A, St.","65125","Maine","beginner",19938863,747),
-  ("Glenna Rollins","1-727-537-4174","sed.diam@hotmail.ca","136-3912 Arcu. Road","M3G 3E8","Gävleborgs län","intermediate",19735996,267),
-  ("Ferdinand Odom","1-482-974-3868","egestas.duis@yahoo.org","7759 Auctor Av.","41596","Norte de Santander","intermediate",19814992,813),
-  ("Irma Scott","1-466-159-3408","enim.consequat@aol.org","7680 Erat Street","736372","Sindh","advanced",19782108,115),
-  ("Cara Santiago","1-337-547-3876","rhoncus.nullam@google.com","426-947 Urna. Rd.","25609","Tasmania","advanced",20049717,843),
-  ("Clarke Booker","1-895-461-6824","urna.ut@hotmail.edu","8195 Nascetur St.","49571","Dōngběi","beginner",19873997,835),
-  ("Sean Myers","1-462-944-5663","nisi@aol.ca","945-1955 Malesuada Street","363657","Los Ríos","beginner",19987064,80),
-  ("Wang Austin","1-545-138-8578","amet.consectetuer@aol.org","P.O. Box 715, 2787 Amet, Avenue","81471","Bahia","intermediate",19594497,569),
-  ("Kylynn Hampton","1-674-539-8255","morbi.tristique.senectus@aol.couk","P.O. Box 646, 9682 Aliquet, Av.","6235","Nordland","intermediate",19761591,782),
-  ("Aurelia Meyers","(667) 499-4944","a.feugiat.tellus@icloud.couk","P.O. Box 638, 2299 Vivamus Rd.","117862","Zuid Holland","advanced",19670480,77),
-  ("Keiko Wiley","1-986-569-3821","donec@yahoo.couk","Ap #281-2890 Nascetur Road","04445","Huádōng","advanced",19614147,423),
-  ("Francis Lynn","1-356-216-4331","mauris.ipsum.porta@icloud.org","Ap #724-7547 Proin St.","93632","Waals-Brabant","beginner",20061458,222),
-  ("Tanek Salazar","(483) 818-4347","ac@outlook.org","177-4431 Felis. Av.","3005","Gauteng","beginner",19893560,847),
-  ("Logan Underwood","(720) 455-1388","elementum.sem.vitae@protonmail.edu","443-9758 Pede Ave","2872","Punjab","intermediate",19636317,67),
-  ("Leo Mcfarland","1-439-869-1902","mauris.sapien@protonmail.edu","P.O. Box 866, 1303 Turpis. Road","4841","Friesland","intermediate",19596798,521),
-  ("Talon Olson","1-501-276-8235","nunc.mauris@yahoo.com","9487 Fusce Road","88071","Luik","advanced",19595620,779),
-  ("Nash Gilliam","1-192-425-4228","sapien.cras@protonmail.couk","540-4189 Dignissim Av.","50211","Trentino-Alto Adige","advanced",20026356,38),
-  ("Karly Wall","(363) 531-6866","risus.nunc@google.ca","940-9449 Tellus. St.","48228","Gangwon","beginner",19795064,147),
-  ("Yardley Cooke","1-492-284-5756","accumsan.sed@protonmail.net","526-9598 Commodo Rd.","25-87","Maranhão","beginner",20015868,882),
-  ("Tamara Dawson","(186) 833-5827","a.mi@google.couk","Ap #297-7122 Sem St.","68581","Đồng Tháp","intermediate",20109594,528),
-  ("Jada Ochoa","1-437-728-1242","rhoncus.id@yahoo.ca","Ap #761-8427 Sed St.","65536-13509","East Region","intermediate",19590747,4),
-  ("Harding Hogan","(666) 277-0463","in.hendrerit.consectetuer@hotmail.org","787-9780 Tincidunt Road","96141-387","Zakarpattia oblast","advanced",20100748,193),
-  ("Kevyn Hernandez","1-306-854-2314","id@protonmail.couk","627-3364 Elementum, Ave","235095","North Island","advanced",19960624,813),
-  ("Gisela Farley","1-807-117-7421","mi.aliquam.gravida@hotmail.ca","194-6102 A St.","1967-4316","Bangsamoro","beginner",20147354,755),
-  ("Ori Freeman","(367) 214-7056","neque.pellentesque.massa@google.com","7678 Donec Ave","35664","South Island","beginner",19504725,996),
-  ("Gemma Hester","(752) 638-4222","pharetra@yahoo.ca","4058 Eget Ave","0236 TW","Manitoba","intermediate",19986870,454),
-  ("Paul Bernard","(857) 747-8193","suspendisse@hotmail.org","825-6531 Suscipit, St.","5376 CP","Boyacá","intermediate",20115185,645),
-  ("Rinah Osborne","1-213-547-8374","dictum@aol.ca","6194 Penatibus Avenue","44266","Caraga","advanced",19845443,509),
-  ("Lewis Ballard","1-758-560-7882","elementum.at@aol.org","288-8195 Lacinia Rd.","5343","Prince Edward Island","advanced",19821400,382);
+  ('Quail Alford','Ap #407-6028 Mi Av.','08474','Lipetsk','beginner',880342024008),
+  ('Raja Watts','8793 Scelerisque, Av.','31115','Campomorone','beginner',431991027680),
+  ('Coby Matthews','Ap #405-6069 Venenatis Rd.','4405','Serang','intermediate',323754890176),
+  ('Gavin Bean','Ap #306-3344 Suspendisse Street','81325-92697','Newton','intermediate',200303297103),
+  ('Wylie Walsh','5503 Sed Rd.','1114','Secunda','advanced',348367340199),
+  ('Halla Tran','Ap #913-5057 Eleifend Road','B3R 2S7','Aklavik','advanced',542058317578),
+  ('Alexander Santiago','175-6777 Donec Avenue','40414','Bama','beginner',821493299639),
+  ('Dara Wyatt','465 Nam Avenue','9275','Novodvinsk','beginner',345441754161),
+  ('Chanda Robertson','2531 Mus. Rd.','40213','Larvik','intermediate',892290147737),
+  ('Kellie Mcclure','976-1208 Elit. Rd.','18-39','Saratov','intermediate',427416178915),
+  ('Hilda Shaffer','6510 Magna Street','632824','Tours','advanced',523684071607),
+  ('Clayton Wynn','562-8691 Curabitur Av.','58684-653','Trier','advanced',482014722442),
+  ('Magee Gilbert','P.O. Box 926, 5778 Non, St.','30-686','Santander','beginner',157480384785),
+  ('John Norman','Ap #687-6869 Est, Rd.','323597','Bais','beginner',787677916641),
+  ('Jenette Knight','Ap #958-6062 Quis, Street','175268','Woodlands','intermediate',895498689899);
 
-DROP TABLE IF EXISTS `instructors`;
 
-CREATE TABLE `instructors` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
-  `instructor_phone` varchar(100) default NULL,
-  `instructor_email` varchar(255) default NULL,
-  `adress_street_name` varchar(255) default NULL,
-  `adress_zip_code` varchar(10) default NULL,
-  `adress_city` varchar(50) default NULL,
-  `person_number` mediumint default NULL,
-  `id` mediumint default NULL,
-  `can_teach_ensambe` varchar(255) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
-INSERT INTO `instructors` (`name`,`instructor_phone`,`instructor_email`,`adress_street_name`,`adress_zip_code`,`adress_city`,`person_number`,`id`,`can_teach_ensambe`)
+INSERT INTO instructor (name,adress_street_name,adress_zip_code,adress_city,can_teach_ensamble,person_number)
 VALUES
-  ("Dale Sosa","(758) 972-0657","ligula.eu.enim@yahoo.net","Ap #153-1532 Elit Rd.","35611-32917","Calabarzon",19556650,711,"Yes"),
-  ("Ava Vaughan","1-676-964-3829","vehicula@hotmail.edu","927-3131 Pede Ave","46569","Virginia",19869545,764,"No"),
-  ("Carl Schultz","(740) 372-4413","lacinia.mattis.integer@outlook.org","239-2511 Vivamus Road","309386","Northumberland",20148787,934,"No"),
-  ("Ayanna Leach","1-727-640-6493","morbi.sit@hotmail.net","Ap #718-7630 Fermentum Rd.","8537","Picardie",19501157,233,"No"),
-  ("Simone Barnes","1-286-957-8287","massa.lobortis@hotmail.org","P.O. Box 757, 4121 Lorem Rd.","64244","Nordrhein-Westphalen",20121962,62,"No"),
-  ("Addison Harrell","(344) 918-2261","dolor.sit.amet@icloud.org","691-5567 A, Ave","24640","Northwest Territories",19770219,72,"No"),
-  ("Echo Robinson","1-717-227-3686","suspendisse.aliquet@aol.net","Ap #815-440 Vitae, Street","81277","Trøndelag",19797176,833,"Yes"),
-  ("Willa Guy","1-837-433-6053","neque.tellus@icloud.ca","Ap #720-412 Imperdiet St.","32189","Lima",20132334,898,"No");
+  ('Gay Nixon','Ap #238-6345 Arcu Rd.','844283','Lạng Sơn','Yes',982494608382),
+  ('Lee Riggs','1334 Massa. Avenue','01278','Agartala','No',846099015685),
+  ('Risa Hyde','641-9538 Quisque Ave','89750-863','Mildura','Yes',990860621871),
+  ('Hu Dickson','Ap #127-3538 Nibh St.','777458','Gulfport','No',245712828710),
+  ('Veronica Cruz','P.O. Box 464, 6782 Sodales Rd.','39216-87724','Hong Kong','No',240212685784);
 
-DROP TABLE IF EXISTS `instruments`;
 
-CREATE TABLE `instruments` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `instrument_type` TEXT default NULL,
-  `brand` TEXT default NULL,
-  `id` mediumint,
-  `renting_price` varchar(100) default NULL,
-  `rented` varchar(255) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
 
-INSERT INTO `instruments` (`instrument_type`,`brand`,`id`,`renting_price`,`rented`)
+INSERT INTO instrument (instrument_type,brand,renting_price,rented)
 VALUES
-  ("Piano","ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla",1,"$47.91","No"),
-  ("Piano","nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque",126,"$85.63","Yes"),
-  ("Violin","lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis",251,"$24.17","Yes"),
-  ("Violin","erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam feugiat",376,"$38.73","Yes"),
-  ("Guitar","aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam",501,"$76.44","No"),
-  ("Guitar","molestie. Sed id risus quis diam luctus lobortis. Class aptent",626,"$74.55","Yes"),
-  ("Electric-guitar","magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec",751,"$42.97","Yes"),
-  ("Electric-guitar","vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur",876,"$15.02","No"),
-  ("Bass","faucibus id, libero. Donec consectetuer mauris id sapien. Cras dolor",1001,"$40.45","Yes"),
-  ("Bass","sem semper erat, in consectetuer ipsum nunc id enim. Curabitur",1126,"$76.83","Yes"),
-  ("Flute","lectus convallis est, vitae sodales nisi magna sed dui. Fusce",1251,"$32.60","Yes"),
-  ("Flute","tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque",1376,"$19.65","Yes"),
-  ("Cello","lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at",1501,"$6.28","No"),
-  ("Cello","vel lectus. Cum sociis natoque penatibus et magnis dis parturient",1626,"$58.43","No"),
-  ("Drums","porttitor tellus non magna. Nam ligula elit, pretium et, rutrum",1751,"$99.65","No"),
-  ("Drums","lectus sit amet luctus vulputate, nisi sem semper erat, in",1876,"$80.11","Yes"),
-  ("Piano","Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam",2001,"$8.67","Yes"),
-  ("Piano","Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc",2126,"$48.66","Yes"),
-  ("Violin","Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non,",2251,"$43.79","Yes"),
-  ("Violin","ante ipsum primis in faucibus orci luctus et ultrices posuere",2376,"$8.02","Yes");
+  ('piano','Steinway_Musical_Instruments',29,'No'),
+  ('piano','Yamaha',18,'Yes'),
+  ('cello','Steinway_Musical_Instruments',99,'No'),
+  ('cello','Sennheiser',10,'Yes'),
+  ('flute','Sennheiser',99,'No'),
+  ('flute','Harman_Professional',26,'No'),
+  ('guitar','Fender_Musical_Instruments',94,'No'),
+  ('guitar','Yamaha',56,'No'),
+  ('drums','Yamaha',33,'No'),
+  ('drums','Fender_Musical_Instruments',75,'No'),
+  ('bass','Yamaha',43,'Yes'),
+  ('bass','Harman_Professional',12,'No'),
+  ('violin','Steinway_Musical_Instruments',54,'No'),
+  ('violin','Shure',25,'Yes'),
+  ('piano','Sennheiser',9,'No'),
+  ('piano','Steinway_Musical_Instruments',51,'Yes'),
+  ('cello','Yamaha',30,'Yes'),
+  ('cello','Steinway_Musical_Instruments',26,'No');
 
-DROP TABLE IF EXISTS `lessons`;
 
-CREATE TABLE `lessons` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `instructor_id` mediumint,
-  `price_scheme_id` mediumint,
-  `id` mediumint,
-  `max_spots` mediumint default NULL,
-  `min_spots` mediumint default NULL,
-  `genre` TEXT default NULL,
-  `lesson_type` TEXT default NULL,
-  `time` varchar(255),
-  `instrument_type` TEXT default NULL,
-  `room_number` mediumint default NULL,
-  `number_of_spots` mediumint default NULL,
-  `skill_level` TEXT default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
 
-INSERT INTO `lessons` (`instructor_id`,`price_scheme_id`,`id`,`max_spots`,`min_spots`,`genre`,`lesson_type`,`time`,`instrument_type`,`room_number`,`number_of_spots`,`skill_level`)
+INSERT INTO lesson (instructor_id,price_scheme_id,max_spots,min_spots,genre,lesson_type,time,instrument_type,room_number,number_of_spots,skill_level)
 VALUES
-  (1,1,1,14,3,"rock","individual","9:20 AM","Guitar",10,1,"beginner"),
-  (100,2,2,30,6,"rock","individual","11:31 PM","Guitar",4,1,"beginner"),
-  (199,3,3,28,3,"pop","group","7:40 PM","Piano",22,3,"intermediate"),
-  (298,4,4,17,7,"pop","group","6:21 AM","Piano",23,1,"intermediate"),
-  (397,5,5,30,3,"classic","ensamble","6:54 AM","Violin",31,3,"advanced"),
-  (496,6,6,33,1,"classic","ensamble","2:02 PM","Violin",2,10,"advanced"),
-  (595,7,7,14,6,"indie","individual","8:59 AM","Bass",19,8,"beginner"),
-  (694,8,8,30,3,"indie","individual","12:16 PM","Bass",27,0,"beginner"),
-  (793,9,9,19,4,"punk","group","1:52 PM","Electric-guitar",7,7,"intermediate"),
-  (892,10,10,14,6,"punk","group","10:11 AM","Electric-guitar",19,3,"intermediate"),
-  (991,11,11,6,3,"rock","ensamble","6:38 AM","Flute",7,2,"advanced"),
-  (1090,12,12,6,4,"rock","ensamble","9:06 PM","Flute",6,6,"advanced"),
-  (1189,13,13,23,3,"pop","individual","3:31 AM","Guitar",15,1,"beginner"),
-  (1288,14,14,29,5,"pop","individual","7:55 PM","Guitar",2,3,"beginner"),
-  (1387,15,15,17,7,"classic","group","8:01 AM","Piano",28,10,"intermediate");
+  (4,4,7,13,'pop','Individual','12:31 AM','piano',183,15,'beginner'),
+  (2,6,8,13,'pop','group','8:19 AM','cello',130,13,'intermediate'),
+  (2,5,14,2,'jazz','ensamble','8:41 PM','flute',227,2,'advanced'),
+  (2,3,11,6,'jazz','Individual','1:57 PM','bass',105,5,'beginner'),
+  (4,6,7,2,'piano','Dec 18, 2022','group','pop',146,1,'Individual'),
+  (4,5,6,2,'guitar','Dec 17, 2022','ensamble','jazz',119,2,'Individual'),
+  (2,2,9,9,'drums','Dec 12, 2022','Individual','rock',119,1,'group'),  
+  (2,2,9,9,'drums','Dec 18, 2022','Individual','rock',119,1,'group'),
+  (1,5,7,8,'violin','Dec 16, 2022','group','classic',188,4,'group'),
+  (2,4,8,8,'bass','Dec 17, 2022','ensamble','indie',116,1,'ensamble'),
+  (3,4,8,7,'flute','Dec 13, 2022','Individual','soul',152,3,'ensamble'),
+  (2,6,8,9,'cello','Dec 13, 2022','group','pop',152,4,'Individual'),
+  (4,4,10,3,'piano','Dec 18, 2022','ensamble','jazz',197,2,'Individual'),
+  (3,7,10,8,'guitar','Dec 12, 2022','Individual','rock',112,3,'group'),
+  (4,3,8,3,'piano','Dec 13, 2022','group','pop',197,1,'beginner'),
+  (2,4,9,2,'guitar','Dec 13, 2022','ensamble','jazz',113,3,'beginner'),
+  (2,4,10,4,'drums','Dec 15, 2022','Individual','rock',109,1,'advanced'),
+  (1,3,9,3,'violin','Dec 16, 2022','group','classic',175,2,'advanced'),
+  (4,7,7,4,'bass','Dec 17, 2022','ensamble','indie',143,3,'intermediate'),
+  (1,4,10,4,'flute','Dec 18, 2022','Individual','soul',143,3,'intermediate'),
+  (4,7,7,4,'cello','Dec 12, 2022','group','pop',141,1,'beginner'),
+  (2,2,8,5,'piano','Dec 13, 2022','ensamble','jazz',103,3,'beginner'),
+  (3,5,9,2,'guitar','Dec 17, 2022','Individual','rock',155,3,'advanced'),
+  (2,7,7,4,'drums','Dec 16, 2022','group','classic',164,1,'advanced'),
+  (1,4,9,3,'violin','Dec 18, 2022','ensamble','indie',190,2,'intermediate'),
+  (4,2,10,5,'piano','Dec 14, 2022','ensamble','pop',201,10,'beginner'),
+  (4,1,10,4,'guitar','Dec 14, 2022','ensamble','jazz',142,9,'beginner'),
+  (5,2,10,4,'drums','Dec 14, 2022','ensamble','rock',191,7,'advanced'),
+  (2,7,10,2,'violin','Dec 14, 2022','ensamble','classic',113,8,'advanced'),
+  (4,6,10,4,'bass','Dec 14, 2022','ensamble','indie',125,9,'intermediate'),
+  (2,3,10,4,'bass','Dec 18, 2022','Individual','soul',123,1,'intermediate'),
+  (4,6,6,2,'flute','Dec 12, 2022','group','pop',104,1,'beginner'),
+  (2,4,7,3,'cello','Dec 11, 2022','ensamble','jazz',125,2,'beginner'),
+  (5,5,8,2,'piano','Dec 11, 2022','Individual','rock',128,2,'advanced'),
+  (2,3,7,6,'drums','Dec 13, 2022','group','classic',196,2,'group'),
+  (4,1,7,7,'violin','Dec 17, 2022','ensamble','indie',179,1,'ensamble'),
+  (4,3,7,2,'bass','Dec 12, 2022','Individual','soul',176,4,'ensamble'),
+  (2,6,6,4,'flute','Dec 14, 2022','group','pop',131,3,'Individual'),
+  (3,4,10,5,'cello','Dec 17, 2022','ensamble','jazz',155,4,'Individual'),
+  (5,5,9,6,'piano','Dec 12, 2022','Individual','rock',110,3,'group'),
+  (3,2,17,9,'rock','group','2:54 AM','violin',245,13,'intermediate'),
+  (2,6,7,11,'rock','ensamble','4:46 AM','drums',130,10,'advanced'),
+  (3,2,19,3,'classic','Individual','4:37 AM','guitar',209,14,'beginner'),
+  (2,2,17,15,'classic','group','9:04 PM','piano',282,9,'intermediate'),
+  (2,1,11,11,'soul','ensamble','8:32 PM','cello',195,11,'advanced'),
+  (2,6,9,3,'soul','Individual','9:20 PM','flute',287,7,'beginner');
 
-DROP TABLE IF EXISTS `price_scheme`;
 
-CREATE TABLE `price_scheme` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `id` mediumint,
-  `skill_level_price` varchar(100) default NULL,
-  `lesson_type_price` varchar(100) default NULL,
-  `discount` varchar(100) default NULL,
-  `instructor_salary` varchar(100) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
 
-INSERT INTO `price_scheme` (`id`,`skill_level_price`,`lesson_type_price`,`discount`,`instructor_salary`)
+INSERT INTO price_scheme  (skill_level_price,lesson_type_price,discount,instructor_salary)
 VALUES
-  (1,"$54.69","$51.91","$75.13","$90.02"),
-  (126,"$81.95","$75.71","$61.61","$1.46"),
-  (251,"$50.70","$25.74","$38.65","$9.01"),
-  (376,"$71.51","$65.77","$60.86","$35.49"),
-  (501,"$40.07","$99.29","$91.23","$14.24"),
-  (626,"$61.41","$27.36","$34.70","$35.16"),
-  (751,"$46.59","$34.61","$27.37","$81.11"),
-  (876,"$18.44","$12.12","$2.96","$66.25"),
-  (1001,"$61.41","$48.53","$93.94","$13.76"),
-  (1126,"$70.90","$24.24","$82.75","$49.20"),
-  (1251,"$58.94","$78.90","$85.80","$9.78"),
-  (1376,"$97.38","$89.99","$85.09","$13.28"),
-  (1501,"$50.49","$57.01","$17.45","$27.65"),
-  (1626,"$71.97","$46.19","$80.30","$56.02"),
-  (1751,"$9.82","$86.22","$94.95","$25.15"),
-  (1876,"$59.57","$87.92","$56.18","$18.47"),
-  (2001,"$53.59","$57.33","$82.85","$29.92"),
-  (2126,"$95.36","$6.26","$81.67","$44.46"),
-  (2251,"$16.23","$18.02","$99.59","$8.58"),
-  (2376,"$64.89","$47.58","$65.72","$83.52"),
-  (2501,"$37.08","$81.22","$92.10","$43.85");
+  (22,93,20,74),
+  (45,100,88,39),
+  (13,94,97,32),
+  (29,58,22,30),
+  (38,40,8,98),
+  (23,24,74,68),
+  (68,95,98,86);
 
-DROP TABLE IF EXISTS `student_lessons`;
 
-CREATE TABLE `student_lessons` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `student_id` mediumint,
-  `lesson_id` mediumint,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
-INSERT INTO `student_lessons` (`student_id`,`lesson_id`)
+INSERT INTO student_lessons (student_id,lesson_id)
 VALUES
-  (1,1),
-  (100,21),
-  (199,41),
-  (298,61),
-  (397,81),
-  (496,101),
-  (595,121),
-  (694,141),
-  (793,161),
-  (892,181),
-  (991,201),
-  (1090,221),
-  (1189,241),
-  (1288,261),
-  (1387,281),
-  (1486,301),
-  (1585,321),
-  (1684,341),
-  (1783,361),
-  (1882,381),
-  (1981,401),
-  (2080,421),
-  (2179,441),
-  (2278,461),
-  (2377,481),
-  (2476,501),
-  (2575,521),
-  (2674,541),
-  (2773,561),
-  (2872,581),
-  (2971,601),
-  (3070,621),
-  (3169,641),
-  (3268,661),
-  (3367,681);
+  (13,2),
+  (4,8),
+  (7,6),
+  (4,4),
+  (11,7),
+  (6,9),
+  (5,3),
+  (8,7),
+  (9,9),
+  (14,3),
+  (1,3),
+  (14,10),
+  (7,9),
+  (9,6),
+  (14,9),
+  (8,9),
+  (6,4),
+  (11,1),
+  (11,9),
+  (15,8),
+  (12,2),
+  (12,8),
+  (10,9),
+  (10,4),
+  (9,4),
+  (8,6),
+  (3,4),
+  (8,3),
+  (10,5),
+  (2,7),
+  (2,4);
 
-DROP TABLE IF EXISTS `rented_instruments`;
 
-CREATE TABLE `rented_instruments` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `instruments_id` mediumint,
-  `student_id` mediumint,
-  `rented_date` varchar(255),
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
-INSERT INTO `rented_instruments` (`instruments_id`,`student_id`,`rented_date`)
+INSERT INTO rented_instruments (student_id,instruments_id,rented_date)
 VALUES
-  (1,1,"Jan 5, 2023"),
-  (100,21,"Apr 14, 2023"),
-  (199,41,"Feb 16, 2022"),
-  (298,61,"Sep 9, 2022"),
-  (397,81,"Nov 10, 2022"),
-  (496,101,"Nov 30, 2021"),
-  (595,121,"Jan 30, 2022"),
-  (694,141,"Jan 30, 2023"),
-  (793,161,"Jul 4, 2023"),
-  (892,181,"Dec 12, 2022"),
-  (991,201,"Feb 14, 2022");
+  (7,15,'Apr 20, 2023'),
+  (6,5,'May 13, 2023'),
+  (13,3,'Oct 29, 2023'),
+  (7,1,'Jul 30, 2022'),
+  (11,10,'Feb 25, 2023'),
+  (12,4,'Jun 3, 2023'),
+  (11,9,'Mar 28, 2023'),
+  (8,14,'Oct 4, 2022'),
+  (12,11,'Sep 5, 2023'),
+  (15,17,'Aug 17, 2022'),
+  (2,16,'Jan 20, 2023');
 
-DROP TABLE IF EXISTS `parent_phone`;
 
-CREATE TABLE `parent_phone` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `student_id` mediumint,
-  `parent_phone` varchar(100) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
 
-INSERT INTO `parent_phone` (`student_id`,`parent_phone`)
+INSERT INTO parent_phone (student_id, phone_number)
 VALUES
-  (1,"1-291-620-0273"),
-  (21,"1-213-896-2163"),
-  (41,"1-386-208-3259"),
-  (61,"(804) 470-1536"),
-  (81,"(324) 858-8486"),
-  (101,"(772) 817-5643"),
-  (121,"1-791-715-5275"),
-  (141,"(471) 261-9822"),
-  (161,"1-702-815-2846"),
-  (181,"(322) 575-3195"),
-  (201,"(914) 452-4981");
+  (1,'0741483337'),
+  (2,'0732628312'),
+  (3,'0708866286'),
+  (4,'0716688135'),
+  (5,'0740983899'),
+  (6,'0796443845'),
+  (7,'0776911335'),
+  (8,'0739393481'),
+  (9,'0768371365'),
+  (10,'0732684495'),
+  (11,'0769779983'),
+  (12,'0752558324'),
+  (13,'0730476545'),
+  (14,'0725192542'),
+  (15,'0732226984');
 
-DROP TABLE IF EXISTS `parent_email`;
-
-CREATE TABLE `parent_email` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `student_id` mediumint,
-  `parent_email` varchar(255) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
-INSERT INTO `parent_email` (`student_id`,`parent_email`)
+INSERT INTO parent_email (student_id,email)
 VALUES
-  (1,"phasellus.libero.mauris@protonmail.couk"),
-  (21,"eu.odio.phasellus@yahoo.net"),
-  (41,"pede@hotmail.ca"),
-  (61,"dignissim.magna.a@yahoo.com"),
-  (81,"risus.morbi.metus@protonmail.net"),
-  (101,"ut.dolor@google.com"),
-  (121,"pellentesque.sed@aol.couk"),
-  (141,"non.arcu@yahoo.net"),
-  (161,"arcu.curabitur@google.ca"),
-  (181,"aenean.euismod@yahoo.com"),
-  (201,"molestie@aol.edu");
+  (1,'luctus.sit.amet@hotmail.couk'),
+  (2,'semper@protonmail.couk'),
+  (3,'ornare.sagittis.felis@google.edu'),
+  (4,'dictum.phasellus@protonmail.com'),
+  (5,'at.fringilla.purus@google.edu'),
+  (6,'feugiat.tellus@protonmail.org'),
+  (7,'taciti@protonmail.net'),
+  (8,'ornare.fusce@google.net'),
+  (9,'velit.dui@yahoo.edu'),
+  (10,'dolor.egestas@aol.ca'),
+  (11,'sapien@google.edu'),
+  (12,'hendrerit.consectetuer@google.com'),
+  (13,'dictum.placerat@protonmail.edu'),
+  (14,'lacus.varius.et@google.ca'),
+  (15,'erat.neque@google.com');
 
-DROP TABLE IF EXISTS `siblings`;
-
-CREATE TABLE `siblings` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
-  `student_id` mediumint,
-  `sibling_student_id` mediumint,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
-
-INSERT INTO `siblings` (`student_id`,`sibling_student_id`)
+INSERT INTO student_phone (student_id,phone_number)
 VALUES
-  (1,1),
-  (21,100),
-  (41,199),
-  (61,298),
-  (81,397),
-  (101,496),
-  (121,595),
-  (141,694),
-  (161,793);
+  (1,'0700889872'),
+  (2,'0765773956'),
+  (3,'0744325437'),
+  (4,'0722996045'),
+  (5,'0763554111'),
+  (6,'0766499188'),
+  (7,'0746238659'),
+  (8,'0730734262'),
+  (9,'0752964973'),
+  (10,'0704215665'),
+  (11,'0797318148'),
+  (12,'0755618762'),
+  (13,'0769878987'),
+  (14,'0741088854'),
+  (15,'0798561223');
+
+
+INSERT INTO student_email (student_id,email)
+VALUES
+  (1,'orci@icloud.net'),
+  (2,'proin@google.net'),
+  (3,'diam.dictum@yahoo.org'),
+  (4,'ultrices@aol.couk'),
+  (5,'nec.metus.facilisis@hotmail.net'),
+  (6,'sociis.natoque.penatibus@outlook.org'),
+  (7,'turpis.non.enim@outlook.edu'),
+  (8,'aliquam.iaculis@protonmail.com'),
+  (9,'sed@protonmail.couk'),
+  (10,'sapien.nunc@outlook.ca'),
+  (11,'quis.accumsan@hotmail.net'),
+  (12,'nibh@aol.com'),
+  (13,'nulla.magna.malesuada@outlook.org'),
+  (14,'mi.pede@protonmail.couk'),
+  (15,'ut.nulla.cras@hotmail.couk');
+
+INSERT INTO instructor_phone (instructor_id,phone_number)
+VALUES
+  (1,'0783468108'),
+  (2,'0774662024'),
+  (3,'0733425789'),
+  (4,'0741101636'),
+  (5,'0752771462');
+
+INSERT INTO instructor_email (instructor_id,email)
+VALUES
+  (1,'sed.pede@google.com'),
+  (2,'libero.donec.consectetuer@protonmail.edu'),
+  (3,'sagittis.duis@google.ca'),
+  (4,'rhoncus@aol.org'),
+  (5,'felis.orci@aol.couk');
+
+INSERT INTO sibling (student_id,sibling_student_id)
+VALUES
+  (1,3),
+  (3,1),
+  (2,6),
+  (6,2),
+  (9,7),
+  (7,9),
+  (4,10),
+  (10,4),
+  (5,8),
+  (8,5),
+  (11,12),
+  (12,11),
+  (11,13),
+  (13,11),
+  (12,13),
+  (13,12);
