@@ -12,15 +12,20 @@ CREATE VIEW lessons_per_lesson_type AS
     ORDER BY number_of_lessons DESC;
 
 
-CREATE VIEW students_without_siblings AS
-    SELECT COUNT(*) AS number_of_students_without_siblings from student
-    WHERE ID NOT IN (SELECT student_id from sibling); 
 
 
 CREATE VIEW students_with_siblings AS
-    SELECT student_id, COUNT(*) AS number_of_siblings from sibling
-    GROUP BY student_id HAVING COUNT(*) > 0
-    ORDER BY student_id ASC;
+    SELECT COUNT(*) AS students, siblings
+    FROM (SELECT student_id, SUM(CASE WHEN student_id IN (SELECT student_id FROM sibling) THEN 1 ELSE 0 END)
+        AS siblings FROM sibling GROUP BY student_id) AS foo
+    GROUP BY siblings
+
+    UNION 
+
+    SELECT COUNT(*) AS number_of_students_without_siblings, 0 from student
+    WHERE id
+    NOT IN (SELECT student_id from sibling)
+    ORDER BY siblings;
 
 
 CREATE VIEW lessons_per_instructor AS
@@ -28,6 +33,7 @@ CREATE VIEW lessons_per_instructor AS
     WHERE EXTRACT(YEAR FROM time) = '2022' AND EXTRACT(MONTH FROM time) = '12' 
     GROUP BY instructor_id HAVING COUNT(*) > 0 
     ORDER BY instructor_id ASC;
+
 
 
 CREATE MATERIALIZED VIEW lessons_next_week AS
